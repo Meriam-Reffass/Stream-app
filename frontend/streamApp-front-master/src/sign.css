@@ -1,0 +1,15 @@
+.divider:after,
+.divider:before {
+content: "";
+flex: 1;
+height: 1px;
+background: #eee;
+}
+.form{
+    width:max-content;
+    margin-top: 3cm;
+    border-color: rgb(11, 5, 5);
+    border-radius: 1mm;
+    margin-left: 10cm;
+    
+}
