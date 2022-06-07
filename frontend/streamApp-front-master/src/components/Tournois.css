@@ -1,0 +1,13 @@
+
+.card{
+    
+    box-shadow: 2;
+    width: 300px;
+    height: 400px;
+    overflow: hidden;
+}
+
+.item{
+    display: flex;
+    justify-content: space-between;
+  }

@@ -89,8 +89,43 @@ console.log(player)
   
   <div id="div" className="aspect-169 pos-relative full-width full-height">
        <h1>Live Streams</h1>
-     
+      <video controls
+          id="video-player"
+          className="video-elem pos-absolute full-width"
+          playsInline
+         
+        ></video> 
 
+<video controls
+          id="video-player"
+          className="video-elem pos-absolute full-width"
+          playsInline
+         
+        ></video> 
+       <video controls
+          id="video-player"
+          className="video-elem pos-absolute full-width"
+          playsInline
+         
+        ></video>
+        <video controls
+          id="video-player"
+          className="video-elem pos-absolute full-width"
+          playsInline
+         
+        ></video> 
+        <video controls
+          id="video-player"
+          className="video-elem pos-absolute full-width"
+          playsInline
+         
+        ></video>  
+        <video controls
+          id="video-player"
+          className="video-elem pos-absolute full-width"
+          playsInline
+         
+        ></video> 
       </div>
  
 )

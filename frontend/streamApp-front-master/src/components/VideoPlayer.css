@@ -31,3 +31,9 @@
       --video-width: 64rem;
     }
   }
+
+.video-elem{
+  width: 400px;
+  height: 200px;
+  margin-left: 10px;
+}
