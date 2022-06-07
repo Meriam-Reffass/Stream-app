@@ -10,12 +10,27 @@ import {
   NavItem,
   NavLink,
 } from "reactstrap";
+import { useNavigate } from 'react-router-dom';
 import { Link } from "react-router-dom";
 
 const Topbar = ({ toggleSidebar }) => {
+  const navigate =useNavigate();
   const [topbarIsOpen, setTopbarOpen] = useState(true);
   const toggleTopbar = () => setTopbarOpen(!topbarIsOpen);
-
+function stream(){
+  if(localStorage.user){
+    navigate("/stream", { replace: true })
+  }else{
+    window.alert("sign in to stream")
+  }
+}
+function blog(){
+  if(localStorage.user){
+    navigate("/addblog", { replace: true })
+  }else{
+    window.alert("sign in to stream")
+  }
+}
   return (
     <Navbar
       color="light"
@@ -29,14 +44,14 @@ const Topbar = ({ toggleSidebar }) => {
       <NavbarToggler onClick={toggleTopbar} />
       <Collapse isOpen={topbarIsOpen} navbar>
         <Nav className="ml-auto" navbar>
-          <NavItem>
-            <NavLink tag={Link} to={"/signIn"}>
-              signIn
+          <NavItem onClick={stream}>
+            <NavLink tag={Link} to={"/"}>
+              Stream
             </NavLink>
           </NavItem>
-          <NavItem>
-            <NavLink tag={Link} to={"/signup"}>
-              SignUp
+          <NavItem onClick={blog}>
+            <NavLink tag={Link} to={"/"}>
+              Write a blog
             </NavLink>
           </NavItem>
           <NavItem>

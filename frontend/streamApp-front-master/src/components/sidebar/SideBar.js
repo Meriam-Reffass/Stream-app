@@ -24,15 +24,20 @@ const SideBar = ({ isOpen, toggle }) => (
     </div>
     <div className="side-menu">
       <Nav vertical className="list-unstyled pb-3">
-        {/* <p>Dummy Heading</p> */}
-        <SubMenu title="Home" icon={faHome} items={submenus[0]} />
+      
+      
+        <NavItem>
+          <NavLink tag={Link} to={"/"}>
+            <FontAwesomeIcon icon={faBriefcase} className="mr-2" />
+            Home
+          </NavLink>
+        </NavItem>
         <NavItem>
           <NavLink tag={Link} to={"/signIn"}>
             <FontAwesomeIcon icon={faBriefcase} className="mr-2" />
             SignIn
           </NavLink>
         </NavItem>
-        <SubMenu title="Pages" icon={faCopy} items={submenus[1]} />
         <NavItem>
           <NavLink tag={Link} to={"/signup"}>
             <FontAwesomeIcon icon={faImage} className="mr-2" />
@@ -52,7 +57,7 @@ const SideBar = ({ isOpen, toggle }) => (
           </NavLink>
         </NavItem>
         <NavItem>
-          <NavLink tag={Link} to={"/contact"}>
+          <NavLink tag={Link} to={"/blogs"}>
             <FontAwesomeIcon icon={faPaperPlane} className="mr-2" />
             Blogs
           </NavLink>

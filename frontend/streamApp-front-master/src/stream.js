@@ -50,7 +50,7 @@ function Stream(props) {
           id="video-player"
           className="video-elem pos-absolute full-width"
           playsInline
-          muted
+         
         ></video>
         
       </div>

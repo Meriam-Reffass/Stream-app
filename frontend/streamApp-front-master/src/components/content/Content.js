@@ -11,6 +11,10 @@ import Tournois from "../Tournois";
 import Formtournois from "../formtournois";
 import Admin from "../../admin";
 import AdminLogin from "../../AdminLogin";
+import Posts from "../Posts/Posts"
+import StartStream from "../../StartStream";
+import AddPosts from "../Posts/Post/AddPost";
+import SinglePostDetails from "../Posts/Post/SinglePostDetails";
 const Content = ({ sidebarIsOpen, toggleSidebar }) => (
   <Container
     fluid
@@ -19,8 +23,14 @@ const Content = ({ sidebarIsOpen, toggleSidebar }) => (
     <Topbar toggleSidebar={toggleSidebar} />
     <Routes>
       <Route path="/" exact element={<VideoPlayer/>} />
+      <Route
+            path='/posts/:id'
+            exact element={<SinglePostDetails />}
+          />
+      <Route path='/blogs'  exact element={<Posts/>} /> 
       <Route path="/admin" exact element={<Admin/>} />
-      <Route path="/:id" exact element={<Chat id="1"/>} />
+      <Route path='/addblog' exact element={<AddPosts />} />
+      <Route path="/stream" exact element={<StartStream/>} />
       <Route exact path="/about" component={() => "About"} />
       <Route path="/tournois" exact element={<Tournois/>} />
       <Route path="/adminTour" exact element={<Formtournois></Formtournois>} />

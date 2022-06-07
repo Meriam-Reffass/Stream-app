@@ -1,7 +1,7 @@
 const AWS = require('aws-sdk');
 const cors=require('cors')
 AWS.config.update( {
-  region: 'eu-west-1'
+  region: 'us-east-1'
 });
 AWS.config.apiVersions = {
   ivs: '2020-07-14',
@@ -17,7 +17,7 @@ let response
 app.use(cors({credentials: true, origin: 'http://localhost:3000'}));
 app.post('/',async(req, res)=> {
   console.log(req)
-  let recordingConfigurationArn= "arn:aws:ivs:eu-west-1:540708535285:recording-configuration/iUu1448J0gHr"
+  let recordingConfigurationArn= "arn:aws:ivs:us-east-1:540708535285:recording-configuration/if93rxXR8yCb"
   var params = {
     latencyMode: "NORMAL",
     recordingConfigurationArn: recordingConfigurationArn,
@@ -38,8 +38,9 @@ app.post('/',async(req, res)=> {
   
 })
 app.post('/stream',async(req,res)=>{
+  console.log(req.body)
   var params = {
-    channelArn: 'arn:aws:ivs:us-east-1:334424422278:channel/Cm9zns7c8C4P' /* required */
+    channelArn: req.body.channelArn /* required */
   };
   ivs.getStream(params, function(err, data) {
     if (err) {
@@ -65,6 +66,7 @@ app.get('/channels',async(req, res)=>{
       }
       
       res.send(array)
+  
     }           // successful response
   });
 })

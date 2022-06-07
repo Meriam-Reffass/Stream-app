@@ -29,8 +29,9 @@ const navigate=useNavigate()
                 <Navbar color="dark" dark expand="md" className="mb-5">
                     <Container>
                         <NavbarBrand href="/">StreamingApp</NavbarBrand>
-                        <Button href="/signIn" class="nav-item nav-link ml-1" >SignIn</Button>
-                        <Button href="/signUp" class="mx-auto">SignUp</Button>
+                        <Button href="/stream" class="nav-item nav-link ml-1" >Stream</Button>
+                        <Button href="/addblog" class="mx-auto">Write a blog</Button>
+
                         <NavbarToggler onClick={toggle}/>
                         <Collapse isOpen={isOpen} navbar>
                             <Nav className="ml-auto" navbar>

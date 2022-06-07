@@ -21,33 +21,27 @@ const [email,setEmail]=useState("")
 const [password,setPassword]=useState("")
 const [user,setUser]=useState("")
 const navigate =useNavigate();
-const stream=async(username)=>{
-  const data=await axios.post("http://localhost:5000",{username:username})
-  const h1=document.createElement('h1')
-  const h=document.createElement('h1')
-  h1.innerText=data.data.IngestServerUrl
-  h.innerText=data.data.streamKey
-  const div=document.getElementById("div")
-  div.appendChild(h1)
-  div.appendChild(h)
 
- }
  const submitHandler=async()=>{
   console.log("ok")
 const data= await axios.post("http://localhost:5001/login",{
   email:email,password:password
 })
-console.log("ok")
+
+console.log(localStorage)
     if(data.data.user){
+      localStorage.setItem("user",JSON.stringify(data.data.user))
+      console.log(localStorage)
       console.log("user exists")
         setUser(data.data.user.username)
+        navigate("/", { replace: true })
     }else{
         window.alert(data.data.message)
     }
 }
 
     return(<div className="App">
-   {(!user)?( <Form className="form">
+   <Form className="form">
        <h2>Sign In</h2>
       <FormGroup>
         <Label for="exampleEmail">Username</Label>
@@ -70,12 +64,9 @@ console.log("ok")
         />
       </FormGroup>
     <Button onClick={submitHandler}>Submit</Button>
-  </Form>):(
-    <>
-    <Button onClick={()=>stream(user)}>Stream</Button>
-    <div id="div"></div>
-    <VideoPlayer /></>
-  )}
+  </Form>
+   
+
    
 </div>)
 }
