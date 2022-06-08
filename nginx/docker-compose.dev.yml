@@ -1,0 +1,48 @@
+version: '3'
+services: 
+    APIGATEWAY:   
+        build:
+            context: ./APIGATEWAY
+            dockerfile: Dockerfile
+        volumes: 
+            - /app/node_modules
+            - ./APIGATEWAY:/app    
+        ports:
+            - "8000:8000"    
+          
+        restart: always  
+        networks:
+            - app_network    
+
+    frontend:   
+        build:
+            context: ./frontend
+            dockerfile: Dockerfile
+        volumes: 
+            - /app/node_modules
+            - ./frontend:/app    
+        #request will forward to same url, so we only need /api to distinguish that this request will forward to our backend           
+        environment: 
+           // - REACT_APP_BACKEND_URL=/api 
+        volumes:
+            - ./frontend/:/app
+            -  /app/node_modules
+    
+        ports:
+           - "3000:3000"
+    networks:
+           - app-network
+
+
+      
+    
+    nginx:
+        build:
+            context: ./nginx
+            dockerfile: Dockerfile.dev
+        ports: 
+            - 3000:80
+        restart: always
+
+volumes: 
+    db-volume:

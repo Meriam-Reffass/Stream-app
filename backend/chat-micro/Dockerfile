@@ -7,6 +7,8 @@ COPY ["package.json", "package-lock.json*", "./"]
 
 RUN npm install --production
 
-COPY . .
+COPY . /app
+
+EXPOSE 8080
 
 CMD [ "node", "index.js" ]
