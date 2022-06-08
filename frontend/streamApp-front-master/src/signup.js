@@ -46,7 +46,8 @@ const submitHandler=async()=>{
 }
 
 return(
-    <Form className="form">
+    <div className="signdiv">
+      <Form className="form">
        <h2>Sign Up</h2>
        <FormGroup>
         <Label for="exampleEmail">name</Label>
@@ -90,6 +91,7 @@ return(
       </FormGroup>
     <Button onClick={submitHandler}>Submit</Button>
   </Form>
+    </div>
 )
 }
 export default Signup

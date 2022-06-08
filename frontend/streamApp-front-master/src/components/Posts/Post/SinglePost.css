@@ -1,0 +1,23 @@
+
+.par{
+    margin-top: 10px;
+}
+.col-11{
+    height: 400px;
+}
+.mycard{
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    width: 500px;
+}
+.cont{
+   width: 800px;
+    margin-left: 200px;
+    margin-right: 100px;
+   background-color: black;
+}
+.titre{
+    text-align: center;
+    
+}

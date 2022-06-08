@@ -2,21 +2,26 @@ import { Box, Card, CardContent, Grow, Typography } from "@material-ui/core";
 import React from "react";
 import { Link } from "react-router-dom";
 import { postStyles } from "./style";
+import "./SinglePost.css";
 
 export default function SinglePost({ item }) {
   const classes = postStyles();
   return (
+    
     <Grow in>
-      <Card>
+      <div className="col-11 col-md-6 col-lg-3 mx-0 mb-4">
+      <Card className="card overflow-hidden h-100 shadow">
+      <div >
         <Box className={classes.cardImageContainer}>
-          <img
+         
+         <img
             src={item.imageFileSet}
             alt={item.title}
-            
-            className={classes.responsiveImg}
+            className="card-img"
           />
         </Box>
-        <CardContent>
+        </div>
+        <CardContent className="par">
           <Link to={`/posts/${item._id}`} className={classes.Link}>
             
             <Typography variant='body1' component='h6' color='textPrimary'>
@@ -29,7 +34,7 @@ export default function SinglePost({ item }) {
             </Typography>
           </Link>
         </CardContent>
-      </Card>
+      </Card></div>
     </Grow>
   );
 }

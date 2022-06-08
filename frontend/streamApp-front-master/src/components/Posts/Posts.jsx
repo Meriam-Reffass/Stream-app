@@ -20,6 +20,7 @@ export default function Posts() {
 
   return (
     <Container>
+
       <Grid container spacing={2}>
         {postData.length ? (
           postData.map((item, i) => (

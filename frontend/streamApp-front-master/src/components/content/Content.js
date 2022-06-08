@@ -14,13 +14,14 @@ import AdminLogin from "../../AdminLogin";
 import Posts from "../Posts/Posts"
 import StartStream from "../../StartStream";
 import AddPosts from "../Posts/Post/AddPost";
+
 import SinglePostDetails from "../Posts/Post/SinglePostDetails";
 const Content = ({ sidebarIsOpen, toggleSidebar }) => (
-  <Container
-    fluid
+  <Container 
+  fluid
     className={classNames("content", { "is-open": sidebarIsOpen })}
-  >
-    <Topbar toggleSidebar={toggleSidebar} />
+   >
+     <Topbar toggleSidebar={toggleSidebar} />
     <Routes>
       <Route path="/" exact element={<VideoPlayer/>} />
       <Route

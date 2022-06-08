@@ -132,3 +132,16 @@ li a.dropdown-toggle::after {
     left: 68%;
   }
 }
+
+.direct{
+  display: flex;
+justify-content: end;
+margin-top: -35px;
+margin-bottom: 20px;
+
+}
+
+.text-light{
+  margin-left: 35px;
+  cursor: pointer;
+}

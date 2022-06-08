@@ -47,7 +47,7 @@ console.log("ok")
     }
 }
 
-    return(<div className="App">
+    return(<div className="signdiv">
    {(!user)?( <Form className="form">
        <h2>Admin Login</h2>
       <FormGroup>

@@ -22,7 +22,7 @@ app.post("/update",async(req,res)=>{
         
         
         let tournoi=await Tournois.find({name:req.body.name})
-        
+        console.log(tournoi[0])
         tournoi[0].participant.push(req.body.username)
         let doc =await Tournois.findOneAndUpdate({name:req.body.name}, tournoi[0], {
                 new: true

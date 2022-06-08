@@ -40,12 +40,12 @@ console.log(localStorage)
     }
 }
 
-    return(<div className="App">
+    return(<div className="signdiv">
    <Form className="form">
        <h2>Sign In</h2>
       <FormGroup>
         <Label for="exampleEmail">Username</Label>
-        <Input
+        <Input className='name'
           type="email"
           name="email"
           id="exampleEmail"
@@ -55,7 +55,7 @@ console.log(localStorage)
       </FormGroup>
       <FormGroup>
         <Label for="examplePassword">Password</Label>
-        <Input
+        <Input className=''
           type="password"
           name="password"
           id="examplePassword"

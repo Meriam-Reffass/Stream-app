@@ -13,7 +13,7 @@ function Formtournois() {
     description: "",
   });
     
-        axios.get('/tournois')
+        axios.get('http://localhost:5002/tournois')
             .then(response => {
                 console.log(response.data)
             });
@@ -25,7 +25,7 @@ function Formtournois() {
   async function onSubmit(e){
     e.preventDefault();
     const newTournois= {...tournois};
-    await fetch("/tournois", {
+    await fetch("http://localhost:5002/tournois", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

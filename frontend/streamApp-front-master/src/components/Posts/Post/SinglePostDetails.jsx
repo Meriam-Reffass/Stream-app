@@ -20,6 +20,7 @@ import {
 import MoreVertIcon from "@material-ui/icons/MoreVert";
 import EditIcon from "@material-ui/icons/Edit";
 import DeleteForeverIcon from "@material-ui/icons/DeleteForever";
+import "./SinglePost.css";
 
 import { postStyles } from "./style";
 import {
@@ -145,7 +146,7 @@ export default function SinglePostDetails(props) {
           </Button>
         </MenuItem>
       </Menu>
-      <Grid container>
+      <Grid container  >
         {!Object.keys(data).length ? (
           <Grid item xs={12}>
             <Box
@@ -158,12 +159,12 @@ export default function SinglePostDetails(props) {
             </Box>
           </Grid>
         ) : (
-          <Grid item xs={12} sm={8}>
-            <Card>
+          <Grid >
+            <Card className="cont">
               <List>
                 <ListItem>
                   <ListItemText>
-                    <Typography variant='h6' color='textPrimary'>
+                    <Typography variant='h2' className="titre" color='textPrimary'>
                       {data.title}
                     </Typography>
                     {data.publishedAt ? (
@@ -185,7 +186,7 @@ export default function SinglePostDetails(props) {
               <img
                 src={data.imageFileSet}
                 alt={data.title}
-                className={classes.responsiveImg}
+                className="mycard"
               />
               <CardContent>
                 <Typography

@@ -10,7 +10,7 @@ const [username,setUsername]=useState("")
 
   const part=async()=>{
    console.log(tournamentname)
-    await axios.post("http://localhost:5000/update",{
+    await axios.post("http://localhost:5002/update",{
       username: username,
       name: tournamentname
     })

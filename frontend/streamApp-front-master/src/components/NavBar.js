@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
+import logo from "./../images/logo1.jpeg";
 import {
     Collapse,
     Navbar,
@@ -11,26 +12,39 @@ import {
     NavLink,
     Container
 } from 'reactstrap' ;
+import '../App.css'
 
 function AppNavBAr() {
-       
+    let item=JSON.parse(localStorage.getItem('user'))
     const [isOpen, setIsOpen] = useState(false);
 const navigate=useNavigate()
     const toggle =() => {
-        // this.setState({
-        //     isOpen : !this.state.isOpen
-        // });
+      
 
         setIsOpen(!isOpen)
     }
+    const [signin,setSignin]=useState("Sign In")
+    const [signup,setSignup]=useState("Sign up")
+    
 
         return(
-            <div>
-                <Navbar color="dark" dark expand="md" className="mb-5">
-                    <Container>
-                        <NavbarBrand href="/">StreamingApp</NavbarBrand>
-                        <Button href="/stream" class="nav-item nav-link ml-1" >Stream</Button>
-                        <Button href="/addblog" class="mx-auto">Write a blog</Button>
+            
+                <Navbar color="dark" dark expand="md" >
+                    <Container >
+                    <Link to="/">
+                            <img component = {Link} to = "/" src= {logo} height ='50'/>
+                        </Link>
+                        <div className='direct'>
+                        
+                       
+                            <Link to="/stream" className='text-light'  >Stream</Link>
+                            <Link to="/blogs" className='text-light' >Blogs</Link>
+                            <Link to='/addblog' className='text-light'>Add Blogs</Link>
+                            <Link to={"/tournois"} className='text-light' onClick={navigate} >Tournament</Link>
+                            <Link to="/signIn" className='text-light' >{signin}</Link>
+                            <Link to="/signup" className='text-light' >{signup}</Link>
+
+                        </div>
 
                         <NavbarToggler onClick={toggle}/>
                         <Collapse isOpen={isOpen} navbar>
@@ -40,7 +54,7 @@ const navigate=useNavigate()
                         </Collapse>
                     </Container>
                 </Navbar>
-            </div>
+            
         )
     
 }
